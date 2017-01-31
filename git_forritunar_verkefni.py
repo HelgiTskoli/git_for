@@ -9,6 +9,23 @@ def daemi2():
     eftirnafn = str(input("Eftirnafn?: "))
     print("Halló", fornafn, eftirnafn)
 
+def daemi3():
+    texti = str(input("Sláðu inn texta: "))
+    lagstafir = 0
+    hastafir = 0
+    teljari = 0
+    ha_undan_la = 0
+    for stafur in texti:
+        if stafur.lower() == stafur:
+            lagstafir += 1
+            if teljari == 1:
+                ha_undan_la += 1
+                teljari = 0
+        elif stafur.upper() == stafur:
+            hastafir += 1
+            teljari += 1
+    print("Í þessum texta eru", hastafir, "hástafir,", lagstafir, "lágstafir og", ha_undan_la, "lágstafir koma strax eftir hástaf")
+
 valmynd = 1
 while(valmynd == 1):
     print("\n-------------------")
@@ -26,7 +43,8 @@ while(valmynd == 1):
         daemi2()
 
     elif val == 3:
-        print("Þetta dæmi er ekki tilbúið.")
+        print("Þú hefur valið að keyra dæmi 3.")
+        daemi3()
 
     else:
         print("Ekki á milli 1-3..")
